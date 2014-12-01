@@ -3,3 +3,6 @@ bin
 *.suo
 release
 debug
+
+*.sdf
+*.layout
