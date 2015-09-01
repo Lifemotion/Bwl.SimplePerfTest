@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <StartupObject>Bwl.SimplePerfTest.SimplePerfTest</StartupObject>
     <RootNamespace>Bwl.SimplePerfTest</RootNamespace>
-    <AssemblyName>Bwl.SimplePerfTest</AssemblyName>
+    <AssemblyName>spt</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>

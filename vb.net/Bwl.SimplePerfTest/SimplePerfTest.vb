@@ -1,16 +1,17 @@
 ﻿Module SimplePerfTest
+    Private rnd As New Random
+    Private repeats As Integer = 10
+    Private float_limit As Single = 10.0
+    Private float_limit_sub As Single = 9.0
+    Private int_limit As Integer = 10000
+    Private int_limit_sub As Integer = 9000
+    Private floats(1024 * 1024 - 1) As Single
+    Private ints(1024 * 1024 - 1) As Integer
+    Private start As DateTime = Now
 
     Sub Main()
         Console.WriteLine("Bwl.SimplePerfTest")
         Console.WriteLine("Preparing...")
-        Dim rnd As New Random
-        Dim repeats = 10
-        Dim float_limit = 10.0
-        Dim float_limit_sub = 9.0
-        Dim int_limit = 10000
-        Dim int_limit_sub = 9000
-        Dim floats(1024 * 1024) As Single
-        Dim ints(1024 * 1024) As Integer
 
         For i = 0 To floats.Length - 1
             floats(i) = rnd.NextDouble * float_limit + 1.0
@@ -19,9 +20,8 @@
             ints(i) = rnd.Next(1000, 9000)
         Next
         Console.WriteLine("Multiplying " + floats.Length.ToString + " floats " + ints.Length.ToString + " ints")
-        Dim start As DateTime = Now
 
-
+        start = Now
         For i = 1 To repeats
             For j = 0 To floats.Length - 2
                 floats(j + 1) = floats(j + 1) * floats(j)
